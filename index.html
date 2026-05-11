@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OPERIX Solutions — Enterprise Command Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Cinzel:wght@400;600;700;900&family=IBM+Plex+Mono:wght@300;400;500&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════
+   LIGHT MODE DESIGN TOKENS
+═══════════════════════════════════════ */
+:root {
+  --bg-main: #f5f7fa; 
+  --bg-surface: #ffffff;
+  --bg-alt: #eaeef3;
+  
+  --text-dark: #111827;
+  --text-muted: #4b5563;
+  --text-light: #6b7280;
+  
+  --gold: #b8860b;
+  --gold-light: #daa520;
+  --gold-pale: rgba(184, 134, 11, 0.08);
+  --border-gold: rgba(184, 134, 11, 0.25);
+  
+  --navy-accent: #1e2d40;
+  --border-soft: rgba(0, 0, 0, 0.06);
+
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Raleway', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── TYPOGRAPHY ─── */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
+.highlight { color: var(--gold); font-style: italic; font-family: var(--font-serif); }
+
+/* ─── NAV ─── */
+header {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  padding: 20px 5%; display: flex; justify-content: space-between; align-items: center;
+  background: rgba(245, 247, 250, 0.85); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft); transition: 0.3s;
+}
+.logo { font-family: var(--font-display); font-size: 24px; font-weight: 900; letter-spacing: 2px; color: var(--navy-accent); }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { color: var(--text-dark); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 100px 5% 50px; position: relative;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 20%, var(--gold-pale) 0%, transparent 40%),
+			  radial-gradient(circle at 20% 80%, rgba(30,45,64,0.03) 0%, transparent 40%);
+  z-index: -1; pointer-events: none;
+}
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px);
+  border: 1px solid var(--border-gold); padding: 60px; border-radius: 20px;
+  max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  animation: fadeUp 1s ease-out;
+}
+.hero-subtitle { font-family: var(--font-mono); color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; }
+.hero-title { font-size: 54px; line-height: 1.1; margin-bottom: 24px; color: var(--navy-accent); }
+.hero-desc { font-family: var(--font-serif); font-size: 22px; color: var(--text-muted); margin-bottom: 40px; max-width: 700px; margin-inline: auto; }
+
+.hero-stats { display: flex; justify-content: center; gap: 40px; border-top: 1px solid var(--border-soft); padding-top: 30px; }
+.stat-box { text-align: center; }
+.stat-num { font-family: var(--font-mono); font-size: 32px; font-weight: 500; color: var(--gold); margin-bottom: 5px; }
+.stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); font-weight: 700; }
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-block; padding: 14px 32px; font-family: var(--font-sans); font-size: 12px;
+  text-transform: uppercase; letter-spacing: 2px; font-weight: 700; cursor: pointer; transition: 0.3s;
+  border-radius: 4px; text-decoration: none;
+}
+.btn-gold { background: var(--gold); color: #fff; border: 1px solid var(--gold); box-shadow: 0 4px 15px var(--gold-pale); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(184, 134, 11, 0.2); }
+
+/* ─── SECTIONS ─── */
+section { padding: 100px 5%; }
+.section-title { font-size: 36px; text-align: center; margin-bottom: 60px; color: var(--navy-accent); }
+.section-title::after { content: ''; display: block; width: 60px; height: 2px; background: var(--gold); margin: 20px auto 0; }
+
+/* ─── SUITE GRID ─── */
+.suite-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.card {
+  background: var(--bg-surface); border: 1px solid var(--border-soft); padding: 40px 30px;
+  border-radius: 12px; transition: 0.4s; position: relative; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: 0.4s;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); border-color: var(--border-gold); }
+.card:hover::before { transform: scaleX(1); }
+.card h3 { font-size: 20px; color: var(--navy-accent); margin-bottom: 15px; }
+.card p { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; min-height: 45px; }
+.card ul { list-style: none; }
+.card ul li { font-size: 13px; color: var(--text-light); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.card ul li::before { content: '◈'; color: var(--gold); font-size: 10px; }
+
+/* ─── TIMELINE (Value Proposition) ─── */
+.timeline { max-width: 800px; margin: 0 auto; border-left: 2px solid var(--border-gold); padding-left: 40px; }
+.timeline-item { position: relative; margin-bottom: 50px; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -46px; top: 0; width: 10px; height: 10px;
+  background: var(--bg-main); border: 2px solid var(--gold); border-radius: 50%;
+}
+.timeline-date { font-family: var(--font-mono); font-size: 12px; color: var(--gold); letter-spacing: 2px; margin-bottom: 10px; display: block; }
+.timeline-content { background: var(--bg-surface); padding: 30px; border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+.timeline-content h3 { color: var(--navy-accent); margin-bottom: 10px; font-size: 22px; }
+.timeline-content p { color: var(--text-muted); font-size: 15px; }
+
+/* ─── CTA / FOOTER ─── */
+.cta-section { text-align: center; background: var(--bg-surface); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); font-size: 12px; color: var(--text-light); background: var(--bg-main); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 36px; }
+  .glass-panel { padding: 40px 20px; }
+  .hero-stats { flex-direction: column; gap: 20px; }
+  .nav-links { display: none; } /* Add hamburger logic for prod */
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="logo">OPERIX<span>.</span></div>
+  <nav class="nav-links">
+	<a href="#about">Platform</a>
+	<a href="#suite">The Suite</a>
+	<a href="#impact">Impact</a>
+	<a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="glass-panel">
+	<div class="hero-subtitle">Enterprise Command & Control</div>
+	<h1 class="hero-title">Empowering Enterprise <span class="highlight">Operations</span></h1>
+	<p class="hero-desc">Unifying Finance, IT, Human Resources, Logistics, and Executive Command into one seamless, intelligent ecosystem.</p>
+	
+	<a href="#suite" class="btn btn-gold" style="margin-bottom: 40px;">Explore the Platform</a>
+
+	<div class="hero-stats" id="hero-stats">
+	  <div class="stat-box">
+		<div class="stat-num" data-target="99.9">0</div>
+		<div class="stat-label">System Uptime %</div>
+	  </div>
+	  <div class="stat-box">
+		<div class="stat-num" data-target="8">0</div>
+		<div class="stat-label">Core Modules</div>
+	  </div>
+	  <div class="stat-box">
+		<div class="stat-num" data-target="10000">0</div>
+		<div class="stat-label">Tasks Automated</div>
+	  </div>
+	</div>
+  </div>
+</section>
+
+<section id="about" style="background: var(--bg-surface);">
+  <div style="max-width: 800px; margin: 0 auto; text-align: center;" class="fade-in">
+	<h2 class="section-title">The <span class="highlight">OPERIX</span> Ecosystem</h2>
+	<p style="font-size: 18px; color: var(--text-muted); font-family: var(--font-serif); line-height: 1.8;">
+	  OPERIX Solutions replaces fragmented legacy systems with a unified digital command center. From live telemetry of field operations and real-time financial tracking, to comprehensive HR directories and AI-powered corporate communications, we provide the architectural foundation for modern enterprises to scale securely and efficiently.
+	</p>
+  </div>
+</section>
+
+<section id="suite">
+  <h2 class="section-title">Integrated <span class="highlight">Modules</span></h2>
+  
+  <div class="suite-grid">
+	
+	<div class="card fade-in">
+	  <h3>Executive Command</h3>
+	  <p>Live enterprise telemetry, financial overview, and high-level KPI tracking.</p>
+	  <ul>
+		<li>Real-time Revenue & Expenses</li>
+		<li>Active Workforce Monitoring</li>
+		<li>Project Portfolio Telemetry</li>
+	  </ul>
+	</div>
+
+	<div class="card fade-in">
+	  <h3>Finance ERP</h3>
+	  <p>Comprehensive financial engine for invoicing, expenses, and enterprise ledgers.</p>
+	  <ul>
+		<li>Automated Invoicing & Billing</li>
+		<li>Expense Tracking & Reconciliation</li>
+		<li>Live Profitability Analytics</li>
+	  </ul>
+	</div>
+
+	<div class="card fade-in">
+	  <h3>Enterprise Operations</h3>
+	  <p>Centralized management of supply chains, workflows, and operational planning.</p>
+	  <ul>
+		<li>Project Portfolio Management</li>
+		<li>Resource & Asset Allocation</li>
+		<li>Logistics & Supply Chain Hub</li>
+	  </ul>
+	</div>
+
+	<div class="card fade-in">
+	  <h3>Human Resources</h3>
+	  <p>Complete employee lifecycle management and organizational structuring.</p>
+	  <ul>
+		<li>Global Employee Directory</li>
+		<li>Automated Leave Management</li>
+		<li>Performance Reviews & OKRs</li>
+	  </ul>
+	</div>
+
+	<div class="card fade-in">
+	  <h3>Field Operations</h3>
+	  <p>Live tracking of remote logistics, valets, vehicles, and on-site client jobs.</p>
+	  <ul>
+		<li>GPS & Clock-in/Clock-out</li>
+		<li>Live Vehicle & Asset Tracking</li>
+		<li>Dynamic Profitability Margins</li>
+	  </ul>
+	</div>
+
+	<div class="card fade-in">
+	  <h3>Marketing & CRM</h3>
+	  <p>Drive growth with integrated customer relationship management and campaigns.</p>
+	  <ul>
+		<li>Lead Generation & Tracking</li>
+		<li>Campaign Performance Metrics</li>
+		<li>Client Relationship Hub</li>
+	  </ul>
+	</div>
+
+	<div class="card fade-in">
+	  <h3>IT & IAM Infrastructure</h3>
+	  <p>Secure identity access management and internal infrastructure support.</p>
+	  <ul>
+		<li>Role-Based Access Control (RBAC)</li>
+		<li>IT Service Desk & Ticketing</li>
+		<li>Hardware & Asset Registry</li>
+	  </ul>
+	</div>
+
+	<div class="card fade-in">
+	  <h3>AI Communications</h3>
+	  <p>Smart, formal email generation and broadcast tools for executives.</p>
+	  <ul>
+		<li>Context-Aware AI Drafting</li>
+		<li>Corporate & Holiday Templates</li>
+		<li>Global Announcement Broadcasting</li>
+	  </ul>
+	</div>
+
+  </div>
+</section>
+
+<section id="impact" style="background: var(--bg-alt);">
+  <h2 class="section-title">The Path to <span class="highlight">Transformation</span></h2>
+  <div class="timeline">
+	
+	<div class="timeline-item fade-in">
+	  <span class="timeline-date">PHASE 01 : DISCOVERY</span>
+	  <div class="timeline-content">
+		<h3>Architecture Audit</h3>
+		<p>We analyze your existing workflows, fragmented databases, and operational bottlenecks to design a custom OPERIX implementation strategy tailored to your industry.</p>
+	  </div>
+	</div>
+
+	<div class="timeline-item fade-in">
+	  <span class="timeline-date">PHASE 02 : DEPLOYMENT</span>
+	  <div class="timeline-content">
+		<h3>System Integration</h3>
+		<p>Seamless migration of your HR directories, financial data, and IT assets into the OPERIX framework. SSO is established, and Role-Based Access Control is enforced.</p>
+	  </div>
+	</div>
+
+	<div class="timeline-item fade-in">
+	  <span class="timeline-date">PHASE 03 : COMMAND</span>
+	  <div class="timeline-content">
+		<h3>Live Telemetry</h3>
+		<p>Your executives gain access to the Global Command Center. Decisions are now driven by real-time data, AI-assisted communications, and automated operational reporting.</p>
+	  </div>
+	</div>
+
+  </div>
+</section>
+
+<section id="contact" class="cta-section">
+  <div class="fade-in">
+	<h2 style="font-family: var(--font-display); font-size: 40px; color: var(--navy-accent); margin-bottom: 20px;">Ready to Elevate Your Enterprise?</h2>
+	<p style="color: var(--text-muted); margin-bottom: 40px;">Request a live demonstration of the OPERIX suite tailored for your organization.</p>
+	<a href="mailto:operixsolution@gmail.com" class="btn btn-gold">Schedule a Demo</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 OPERIX Solutions. All Rights Reserved.</p>
+  <p style="margin-top: 5px;">Enterprise Architecture & Command Systems</p>
+</footer>
+
+<script>
+// Scroll Animation Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+	if(entry.isIntersecting) {
+	  entry.target.classList.add('visible');
+	}
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Stats Counter Animation
+const statNums = document.querySelectorAll('.stat-num');
+const animateNum = (el, target) => {
+  let curr = 0;
+  const inc = target / 50;
+  const timer = setInterval(() => {
+	curr += inc;
+	if(curr >= target) {
+	  clearInterval(timer);
+	  // Format: add + for 10000, % for 99.9
+	  if(target === 99.9) el.innerText = target.toFixed(1) + '%';
+	  else if(target >= 1000) el.innerText = Math.floor(target/1000) + 'K+';
+	  else el.innerText = Math.floor(target) + '+';
+	} else {
+	  el.innerText = target === 99.9 ? curr.toFixed(1) : Math.floor(curr);
+	}
+  }, 30);
+};
+
+// Trigger stats when Hero is visible
+const heroObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+	if(e.isIntersecting) {
+	  statNums.forEach(num => animateNum(num, parseFloat(num.getAttribute('data-target'))));
+	  heroObs.disconnect(); // Run once
+	}
+  });
+}, { threshold: 0.5 });
+
+const heroStats = document.getElementById('hero-stats');
+if(heroStats) heroObs.observe(heroStats);
+
+// Header background shift on scroll
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if(window.scrollY > 50) {
+	header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
+  } else {
+	header.style.boxShadow = 'none';
+  }
+});
+</script>
+</body>
+</html>
