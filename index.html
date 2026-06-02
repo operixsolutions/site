@@ -85,6 +85,7 @@ header {
 .stat-box { text-align: center; }
 .stat-num { font-family: var(--font-mono); font-size: 32px; font-weight: 500; color: var(--gold); margin-bottom: 5px; }
 .stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); font-weight: 700; }
+
 /* ─── BUTTONS ─── */
 .btn {
   display: inline-block; padding: 14px 32px; font-family: var(--font-sans); font-size: 12px;
@@ -93,13 +94,15 @@ header {
 }
 .btn-gold { background: var(--gold); color: #fff; border: 1px solid var(--gold); box-shadow: 0 4px 15px var(--gold-pale); }
 .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(184, 134, 11, 0.2); }
+.btn-outline { background: transparent; color: var(--navy-accent); border: 1px solid var(--navy-accent); }
+.btn-outline:hover { background: var(--navy-accent); color: #fff; }
 
 /* ─── SECTIONS ─── */
 section { padding: 100px 5%; }
 .section-title { font-size: 36px; text-align: center; margin-bottom: 60px; color: var(--navy-accent); }
 .section-title::after { content: ''; display: block; width: 60px; height: 2px; background: var(--gold); margin: 20px auto 0; }
 
-/* ─── SVG GALLERY CARDS (9 Systems) ─── */
+/* ─── SVG GALLERY CARDS (3 Core Systems) ─── */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -138,7 +141,7 @@ section { padding: 100px 5%; }
 .gcard-feats { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
 .gcard-feat { font-size: 13px; color: var(--text-light); padding-left: 14px; position: relative; font-weight: 500; }
 .gcard-feat::before { content: '◈'; color: var(--gold); font-size: 10px; position: absolute; left: 0; top: 2px; }
-.gcard-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.gcard-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
 .gcard-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 600; padding: 4px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
 .gcard:hover .gcard-tag { border-color: var(--border-gold); color: var(--gold); background: var(--gold-pale); }
 
@@ -166,7 +169,7 @@ footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); fo
   <div class="logo">OPERIX<span>.</span></div>
   <nav class="nav-links">
 	<a href="#about">Platform</a>
-	<a href="#suite">The Suite</a>
+	<a href="#suite">The Platforms</a>
 	<a href="#impact">Impact</a>
 	<a href="#contact">Contact</a>
   </nav>
@@ -176,9 +179,9 @@ footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); fo
   <div class="glass-panel">
 	<div class="hero-subtitle">Enterprise Command & Control</div>
 	<h1 class="hero-title">Empowering Enterprise <span class="highlight">Operations</span></h1>
-	<p class="hero-desc">Unifying Finance, IT, Human Resources, Logistics, and Executive Command into one seamless, intelligent ecosystem.</p>
+	<p class="hero-desc">Unifying Operations, Health Care, and Human Resources into three seamless, intelligent ecosystems.</p>
 	
-	<a href="#suite" class="btn btn-gold" style="margin-bottom: 40px;">Explore the Platform</a>
+	<a href="#suite" class="btn btn-gold" style="margin-bottom: 40px;">Explore the Platforms</a>
 
 	<div class="hero-stats" id="hero-stats">
 	  <div class="stat-box">
@@ -186,7 +189,7 @@ footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); fo
 		<div class="stat-label">System Uptime %</div>
 	  </div>
 	  <div class="stat-box">
-		<div class="stat-num" data-target="9">0</div> <div class="stat-label">Core Modules</div>
+		<div class="stat-num" data-target="3">0</div> <div class="stat-label">Core Systems</div>
 	  </div>
 	  <div class="stat-box">
 		<div class="stat-num" data-target="10000">0</div>
@@ -200,13 +203,13 @@ footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); fo
   <div style="max-width: 800px; margin: 0 auto; text-align: center;" class="fade-in">
 	<h2 class="section-title">The <span class="highlight">OPERIX</span> Ecosystem</h2>
 	<p style="font-size: 18px; color: var(--text-muted); font-family: var(--font-serif); line-height: 1.8;">
-	  OPERIX Solutions replaces fragmented legacy systems with a unified digital command center. From live telemetry of field operations and real-time financial tracking, to comprehensive HR directories and AI-powered corporate communications, we provide the architectural foundation for modern enterprises to scale securely and efficiently.
+	  OPERIX Solutions replaces fragmented legacy systems with a unified digital command center. We provide specialized platforms for enterprise operations, advanced clinical health care management, and complete human resource life-cycle tracking.
 	</p>
   </div>
 </section>
 
 <section id="suite">
-  <h2 class="section-title">The 9 <span class="highlight">Systems</span></h2>
+  <h2 class="section-title">Explore Our <span class="highlight">Platforms</span></h2>
   
   <div class="gallery-grid">
 
@@ -215,106 +218,10 @@ footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); fo
 		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
 		  <rect width="350" height="220" fill="#f8fafc"/>
 		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.25)" stroke-width="1"/>
-		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX EXEC · C-LEVEL OVERVIEW</text>
-		  
-		  <circle cx="60" cy="100" r="32" fill="none" stroke="#e5e7eb" stroke-width="6"/>
-		  <circle cx="60" cy="100" r="32" fill="none" stroke="#10b981" stroke-width="6" stroke-dasharray="127 201" stroke-dashoffset="50" transform="rotate(-90 60 100)"/>
-		  <text x="60" y="103" font-family="IBM Plex Mono" font-size="11" fill="#111827" font-weight="600" text-anchor="middle">87%</text>
-		  <text x="60" y="115" font-family="IBM Plex Mono" font-size="5.5" fill="#6b7280" font-weight="600" text-anchor="middle">ATTENDANCE</text>
-		  
-		  <circle cx="150" cy="100" r="32" fill="none" stroke="#e5e7eb" stroke-width="6"/>
-		  <circle cx="150" cy="100" r="32" fill="none" stroke="#b8860b" stroke-width="6" stroke-dasharray="150 201" stroke-dashoffset="50" transform="rotate(-90 150 100)"/>
-		  <text x="150" y="103" font-family="IBM Plex Mono" font-size="11" fill="#111827" font-weight="600" text-anchor="middle">75%</text>
-		  <text x="150" y="115" font-family="IBM Plex Mono" font-size="5.5" fill="#6b7280" font-weight="600" text-anchor="middle">OPS KPIs</text>
-		  
-		  <circle cx="240" cy="100" r="32" fill="none" stroke="#e5e7eb" stroke-width="6"/>
-		  <circle cx="240" cy="100" r="32" fill="none" stroke="#ef4444" stroke-width="6" stroke-dasharray="104 201" stroke-dashoffset="50" transform="rotate(-90 240 100)"/>
-		  <text x="240" y="103" font-family="IBM Plex Mono" font-size="11" fill="#111827" font-weight="600" text-anchor="middle">52%</text>
-		  <text x="240" y="115" font-family="IBM Plex Mono" font-size="5.5" fill="#6b7280" font-weight="600" text-anchor="middle">BUDGET</text>
-		  
-		  <rect x="295" y="45" width="45" height="90" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="302" y="58" font-family="IBM Plex Mono" font-size="5" fill="#6b7280" font-weight="600">ALERTS</text>
-		  <rect x="300" y="65" width="35" height="12" rx="2" fill="rgba(239,68,68,0.1)"/>
-		  <rect x="300" y="82" width="35" height="12" rx="2" fill="rgba(245,158,11,0.1)"/>
-		  <rect x="300" y="99" width="35" height="12" rx="2" fill="rgba(16,185,129,0.1)"/>
-		  
-		  <rect x="10" y="155" width="330" height="26" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="20" y="172" font-family="IBM Plex Mono" font-size="7" font-weight="600" fill="#374151">Board Report · May 2026 · Ready</text>
-		  <rect x="280" y="162" width="50" height="12" rx="2" fill="rgba(184,134,11,0.1)"/>
-		  
-		  <rect x="0" y="202" width="350" height="18" fill="rgba(184,134,11,0.05)"/>
-		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#b8860b" letter-spacing="1">EXECUTIVE ACCESS · REAL-TIME · AUTO REPORTING</text>
-		</svg>
-	  </div>
-	  <div class="gcard-body">
-		<div class="gcard-module">Module · 01</div>
-		<div class="gcard-title">Executive Command</div>
-		<div class="gcard-desc">C-level command center with real-time operational health gauges, cross-module KPI aggregation, and automated board reports.</div>
-		<div class="gcard-feats">
-		  <div class="gcard-feat">Live health gauges across all modules</div>
-		  <div class="gcard-feat">Cross-module KPI trend analysis</div>
-		  <div class="gcard-feat">Automated board report generation</div>
-		</div>
-		<div class="gcard-tags"><span class="gcard-tag">C-Level</span><span class="gcard-tag">KPIs</span><span class="gcard-tag">Reports</span></div>
-	  </div>
-	</div>
-
-	<div class="gcard fade-in">
-	  <div class="gcard-screen">
-		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
-		  <rect width="350" height="220" fill="#f8fafc"/>
-		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.25)" stroke-width="1"/>
-		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX FMIS · FINANCE ERP</text>
-		  
-		  <rect x="10" y="40" width="100" height="50" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="18" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#6b7280" letter-spacing="1">REVENUE</text>
-		  <text x="18" y="78" font-family="IBM Plex Mono" font-size="18" fill="#10b981" font-weight="600">248K</text>
-		  
-		  <rect x="120" y="40" width="100" height="50" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="128" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#6b7280" letter-spacing="1">PAYROLL</text>
-		  <text x="128" y="78" font-family="IBM Plex Mono" font-size="18" fill="#ef4444" font-weight="600">142K</text>
-		  
-		  <rect x="230" y="40" width="110" height="50" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="238" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#6b7280" letter-spacing="1">EXPENSES</text>
-		  <text x="238" y="78" font-family="IBM Plex Mono" font-size="18" fill="#f59e0b" font-weight="600">38K</text>
-		  
-		  <rect x="10" y="100" width="330" height="26" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="20" y="117" font-family="IBM Plex Mono" font-size="7" font-weight="600" fill="#4b5563">NET BALANCE (Revenue − Sal − Exp):</text>
-		  <text x="280" y="118" font-family="IBM Plex Mono" font-size="10" fill="#111827" font-weight="600">68K</text>
-		  
-		  <text x="10" y="145" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#9ca3af" letter-spacing="1">MONTHLY REVENUE TREND</text>
-		  <rect x="10" y="160" width="22" height="30" rx="2" fill="rgba(16,185,129,0.3)"/>
-		  <rect x="38" y="150" width="22" height="40" rx="2" fill="rgba(16,185,129,0.5)"/>
-		  <rect x="66" y="130" width="22" height="60" rx="2" fill="rgba(16,185,129,0.7)"/>
-		  <rect x="94" y="140" width="22" height="50" rx="2" fill="rgba(16,185,129,0.5)"/>
-		  <rect x="122" y="110" width="22" height="80" rx="2" fill="#b8860b"/>
-		  
-		  <rect x="0" y="202" width="350" height="18" fill="rgba(184,134,11,0.05)"/>
-		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#b8860b" letter-spacing="1">ADMIN ONLY · P&L TRACKING · EXCEL EXPORT</text>
-		</svg>
-	  </div>
-	  <div class="gcard-body">
-		<div class="gcard-module">Module · 02</div>
-		<div class="gcard-title">Finance ERP</div>
-		<div class="gcard-desc">Financial Management Information System with real-time P&L, project-level budget tracking, and automated reporting.</div>
-		<div class="gcard-feats">
-		  <div class="gcard-feat">Live net balance calculations</div>
-		  <div class="gcard-feat">Project-filtered financial views</div>
-		  <div class="gcard-feat">One-click Excel/CSV data exports</div>
-		</div>
-		<div class="gcard-tags"><span class="gcard-tag">Finance</span><span class="gcard-tag">Admin</span><span class="gcard-tag">Export</span></div>
-	  </div>
-	</div>
-
-	<div class="gcard fade-in">
-	  <div class="gcard-screen">
-		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
-		  <rect width="350" height="220" fill="#f8fafc"/>
-		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.25)" stroke-width="1"/>
-		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX OPS · ANPR & VALET</text>
+		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX OPS · COMMAND CENTER</text>
 		  
 		  <rect x="10" y="40" width="160" height="110" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="20" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#6b7280" letter-spacing="1">CAM 01 · GATE A</text>
+		  <text x="20" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#6b7280" letter-spacing="1">ANPR · GATE A</text>
 		  <rect x="35" y="70" width="110" height="40" rx="4" fill="#f1f5f9" stroke="#e5e7eb" stroke-width="1"/>
 		  <rect x="55" y="85" width="70" height="20" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
 		  <text x="63" y="100" font-family="IBM Plex Mono" font-size="10" font-weight="700" fill="#111827">ABC 1234</text>
@@ -328,22 +235,22 @@ footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); fo
 		  <text x="296" y="114" font-family="IBM Plex Mono" font-size="5.5" font-weight="700" fill="#10b981">PARKED</text>
 		  
 		  <rect x="10" y="160" width="330" height="30" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="20" y="178" font-family="IBM Plex Mono" font-size="7" font-weight="600" fill="#4b5563">Valet Load: Khalid (14 ops) | Faisal (11 ops)</text>
+		  <text x="20" y="178" font-family="IBM Plex Mono" font-size="7" font-weight="600" fill="#4b5563">Active Ops: 142 | Gig Workforce Deployed</text>
 		  
 		  <rect x="0" y="202" width="350" height="18" fill="rgba(184,134,11,0.05)"/>
 		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#b8860b" letter-spacing="1">LIVE ANPR · GATE AUTO-LOG · QR INVOICING ACTIVE</text>
 		</svg>
 	  </div>
 	  <div class="gcard-body">
-		<div class="gcard-module">Module · 03</div>
-		<div class="gcard-title">Enterprise Operations</div>
-		<div class="gcard-desc">Core operations hub replacing manual logbooks — ANPR parking, valet management, and real-time gate entry logging.</div>
+		<div class="gcard-title">OPERIX Operations</div>
+		<div class="gcard-desc">The core operations hub replacing manual logbooks. Comprehensive ANPR parking, valet management, and real-time gig workforce deployment.</div>
 		<div class="gcard-feats">
 		  <div class="gcard-feat">Live ANPR camera plate recognition</div>
+		  <div class="gcard-feat">Gig workforce & Valet performance tracking</div>
 		  <div class="gcard-feat">Automated ticket & QR invoice generation</div>
-		  <div class="gcard-feat">Valet performance tracking</div>
 		</div>
-		<div class="gcard-tags"><span class="gcard-tag">ANPR</span><span class="gcard-tag">Valet</span><span class="gcard-tag">QR</span></div>
+		<div class="gcard-tags"><span class="gcard-tag">ANPR</span><span class="gcard-tag">Valet</span><span class="gcard-tag">Gig Work</span></div>
+		<a href="https://operix-operations.vercel.app" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: auto;">Launch Platform</a>
 	  </div>
 	</div>
 
@@ -351,25 +258,69 @@ footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); fo
 	  <div class="gcard-screen">
 		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
 		  <rect width="350" height="220" fill="#f8fafc"/>
-		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.25)" stroke-width="1"/>
-		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX HRIS · WORKFORCE BOARD</text>
+		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(14, 165, 233, 0.08)" stroke="rgba(14, 165, 233, 0.25)" stroke-width="1"/>
+		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#0ea5e9" letter-spacing="1">OPERIX CARE · CLINICAL WORKSPACE</text>
+		  
+		  <rect x="10" y="40" width="100" height="150" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+		  <circle cx="60" cy="75" r="18" fill="#f1f5f9"/>
+		  <path d="M54 80 Q60 68 66 80" stroke="#cbd5e1" stroke-width="2" fill="none"/>
+		  <circle cx="60" cy="70" r="5" fill="#cbd5e1"/>
+		  <text x="60" y="110" font-family="IBM Plex Mono" font-size="8" font-weight="600" fill="#111827" text-anchor="middle">Ahmad Y.</text>
+		  <text x="60" y="125" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#6b7280" text-anchor="middle">ID: P-99201</text>
+		  <rect x="25" y="140" width="70" height="15" rx="3" fill="#e0f2fe"/>
+		  <text x="60" y="150" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#0284c7" text-anchor="middle">VIEW HISTORY</text>
+
+		  <rect x="120" y="40" width="220" height="70" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+		  <text x="130" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#10b981" letter-spacing="1">LIVE VITALS</text>
+		  <polyline points="130,85 160,85 170,65 180,100 190,85 320,85" fill="none" stroke="#10b981" stroke-width="2" stroke-linejoin="round"/>
+		  <circle cx="180" cy="100" r="3" fill="#10b981"/>
+
+		  <rect x="120" y="120" width="220" height="70" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+		  <text x="130" y="135" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#8b5cf6" letter-spacing="1">VOICE-TO-TEXT DIAGNOSIS</text>
+		  <rect x="130" y="145" width="200" height="4" rx="2" fill="#e2e8f0"/>
+		  <rect x="130" y="155" width="180" height="4" rx="2" fill="#e2e8f0"/>
+		  <rect x="130" y="165" width="140" height="4" rx="2" fill="#e2e8f0"/>
+		  
+		  <rect x="0" y="202" width="350" height="18" fill="rgba(14, 165, 233, 0.05)"/>
+		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#0ea5e9" letter-spacing="1">PATIENT HISTORY · VOICE RECOGNITION · ECR</text>
+		</svg>
+	  </div>
+	  <div class="gcard-body">
+		<div class="gcard-title">OPERIX Health Care</div>
+		<div class="gcard-desc">Advanced medical management ecosystem featuring doctor portals, comprehensive patient history, and voice-to-text clinical notes.</div>
+		<div class="gcard-feats">
+		  <div class="gcard-feat">Voice recognition for quick diagnosis entry</div>
+		  <div class="gcard-feat">Complete electronic patient history</div>
+		  <div class="gcard-feat">Secure portals for doctors and nurses</div>
+		</div>
+		<div class="gcard-tags"><span class="gcard-tag">Health Care</span><span class="gcard-tag">Clinical</span><span class="gcard-tag">ECR</span></div>
+		<a href="https://operix-care.vercel.app" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: auto; border-color: #0ea5e9; color: #0ea5e9;">Launch Platform</a>
+	  </div>
+	</div>
+
+	<div class="gcard fade-in">
+	  <div class="gcard-screen">
+		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
+		  <rect width="350" height="220" fill="#f8fafc"/>
+		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(16, 185, 129, 0.08)" stroke="rgba(16, 185, 129, 0.25)" stroke-width="1"/>
+		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#059669" letter-spacing="1">OPERIX HRIS · WORKFORCE BOARD</text>
 		  
 		  <rect x="10" y="40" width="330" height="24" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <circle cx="26" cy="52" r="6" fill="rgba(184,134,11,0.15)"/>
+		  <circle cx="26" cy="52" r="6" fill="rgba(16, 185, 129, 0.15)"/>
 		  <text x="40" y="55" font-family="IBM Plex Mono" font-size="8" font-weight="600" fill="#374151">Ahmad K.</text>
 		  <rect x="120" y="45" width="50" height="14" rx="3" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="0.5"/>
 		  <text x="126" y="54" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#10b981">CHECK IN</text>
 		  <text x="180" y="55" font-family="IBM Plex Mono" font-size="8" fill="#6b7280" font-weight="500">08:02 AM</text>
 		  
 		  <rect x="10" y="70" width="330" height="24" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <circle cx="26" cy="82" r="6" fill="rgba(184,134,11,0.15)"/>
+		  <circle cx="26" cy="82" r="6" fill="rgba(239, 68, 68, 0.15)"/>
 		  <text x="40" y="85" font-family="IBM Plex Mono" font-size="8" font-weight="600" fill="#374151">Sara M.</text>
 		  <rect x="120" y="75" width="50" height="14" rx="3" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="0.5"/>
 		  <text x="132" y="84" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#ef4444">ABSENT</text>
 		  <text x="280" y="85" font-family="IBM Plex Mono" font-size="8" fill="#ef4444" font-weight="600">-SAR 280</text>
 		  
 		  <rect x="10" y="100" width="330" height="24" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <circle cx="26" cy="112" r="6" fill="rgba(184,134,11,0.15)"/>
+		  <circle cx="26" cy="112" r="6" fill="rgba(245, 158, 11, 0.15)"/>
 		  <text x="40" y="115" font-family="IBM Plex Mono" font-size="8" font-weight="600" fill="#374151">Omar F.</text>
 		  <rect x="120" y="105" width="50" height="14" rx="3" fill="rgba(245,158,11,0.1)" stroke="#f59e0b" stroke-width="0.5"/>
 		  <text x="135" y="114" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#f59e0b">LATE</text>
@@ -384,266 +335,20 @@ footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); fo
 		  <text x="190" y="150" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#6b7280" letter-spacing="1">PAYROLL ESTIMATE</text>
 		  <text x="190" y="175" font-family="IBM Plex Mono" font-size="14" font-weight="700" fill="#111827">SAR 42,800</text>
 		  
-		  <rect x="0" y="202" width="350" height="18" fill="rgba(184,134,11,0.05)"/>
-		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#b8860b" letter-spacing="1">LIVE · 42 EMPLOYEES · AUTO-DEDUCTION ON</text>
+		  <rect x="0" y="202" width="350" height="18" fill="rgba(16, 185, 129, 0.05)"/>
+		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#059669" letter-spacing="1">LIVE · 42 EMPLOYEES · AUTO-DEDUCTION ON</text>
 		</svg>
 	  </div>
 	  <div class="gcard-body">
-		<div class="gcard-module">Module · 04</div>
-		<div class="gcard-title">Human Resources</div>
-		<div class="gcard-desc">Complete HR automation — GPS-enforced attendance, automated salary deductions, and employee self-service portal.</div>
+		<div class="gcard-title">OPERIX HRIS</div>
+		<div class="gcard-desc">Complete HR automation — GPS-enforced attendance tracking, automated salary deductions, and seamless employee self-service.</div>
 		<div class="gcard-feats">
 		  <div class="gcard-feat">GPS-fenced check-in/out enforcement</div>
-		  <div class="gcard-feat">Auto salary deduction engine (late/absent)</div>
+		  <div class="gcard-feat">Auto salary deduction engine</div>
 		  <div class="gcard-feat">Shift scheduling & master directory</div>
 		</div>
 		<div class="gcard-tags"><span class="gcard-tag">GPS</span><span class="gcard-tag">Payroll</span><span class="gcard-tag">Portal</span></div>
-	  </div>
-	</div>
-
-	<div class="gcard fade-in">
-	  <div class="gcard-screen">
-		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
-		  <rect width="350" height="220" fill="#f8fafc"/>
-		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.25)" stroke-width="1"/>
-		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX FIELDS · DISPATCH & GPS</text>
-		  
-		  <rect x="10" y="40" width="180" height="150" rx="3" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
-		  <polyline points="40,160 80,120 120,130 160,70" fill="none" stroke="#3b82f6" stroke-width="3" stroke-dasharray="6 4"/>
-		  <circle cx="40" cy="160" r="5" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
-		  <circle cx="160" cy="70" r="6" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
-		  <rect x="110" y="55" width="40" height="12" rx="2" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="115" y="63" font-family="IBM Plex Mono" font-size="5" font-weight="700" fill="#111827">UNIT 04</text>
-		  
-		  <rect x="200" y="40" width="140" height="150" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="210" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#6b7280" letter-spacing="1">ACTIVE DISPATCH</text>
-		  
-		  <rect x="210" y="65" width="120" height="35" rx="2" fill="#f1f5f9"/>
-		  <text x="215" y="78" font-family="IBM Plex Mono" font-size="7" font-weight="600" fill="#111827">Unit 04: Maintenance</text>
-		  <rect x="215" y="84" width="45" height="10" rx="2" fill="rgba(16,185,129,0.1)"/>
-		  <text x="220" y="91" font-family="IBM Plex Mono" font-size="5" font-weight="700" fill="#10b981">ON SITE</text>
-		  
-		  <rect x="210" y="105" width="120" height="35" rx="2" fill="#f1f5f9"/>
-		  <text x="215" y="118" font-family="IBM Plex Mono" font-size="7" font-weight="600" fill="#111827">Unit 02: Delivery</text>
-		  <rect x="215" y="124" width="45" height="10" rx="2" fill="rgba(59,130,246,0.1)"/>
-		  <text x="220" y="131" font-family="IBM Plex Mono" font-size="5" font-weight="700" fill="#3b82f6">EN ROUTE</text>
-		  
-		  <rect x="0" y="202" width="350" height="18" fill="rgba(184,134,11,0.05)"/>
-		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#b8860b" letter-spacing="1">GPS TRACKING · LIVE DISPATCH · SLA MONITORING</text>
-		</svg>
-	  </div>
-	  <div class="gcard-body">
-		<div class="gcard-module">Module · 05</div>
-		<div class="gcard-title">Field Operations</div>
-		<div class="gcard-desc">Live tracking of remote logistics and on-site jobs. Dispatch units with real-time GPS routing and SLA completion logs.</div>
-		<div class="gcard-feats">
-		  <div class="gcard-feat">Live vehicle & asset tracking maps</div>
-		  <div class="gcard-feat">Real-time job dispatch and status</div>
-		  <div class="gcard-feat">Dynamic profitability margins per trip</div>
-		</div>
-		<div class="gcard-tags"><span class="gcard-tag">Dispatch</span><span class="gcard-tag">Logistics</span><span class="gcard-tag">Maps</span></div>
-	  </div>
-	</div>
-
-	<div class="gcard fade-in">
-	  <div class="gcard-screen">
-		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
-		  <rect width="350" height="220" fill="#f8fafc"/>
-		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.25)" stroke-width="1"/>
-		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX MARKETING · CRM & CAMPAIGNS</text>
-		  
-		  <rect x="10" y="40" width="160" height="150" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="20" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#6b7280" letter-spacing="1">SALES FUNNEL (Q3)</text>
-		  
-		  <polygon points="30,70 150,70 140,95 40,95" fill="rgba(59,130,246,0.8)"/>
-		  <text x="90" y="85" font-family="IBM Plex Mono" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">Traffic: 14k</text>
-		  
-		  <polygon points="40,100 140,100 125,125 55,125" fill="rgba(16,185,129,0.8)"/>
-		  <text x="90" y="115" font-family="IBM Plex Mono" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">Leads: 2.1k</text>
-		  
-		  <polygon points="55,130 125,130 110,155 70,155" fill="rgba(245,158,11,0.8)"/>
-		  <text x="90" y="145" font-family="IBM Plex Mono" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">Deals: 340</text>
-		  
-		  <polygon points="70,160 110,160 100,185 80,185" fill="#b8860b"/>
-		  <text x="90" y="175" font-family="IBM Plex Mono" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle">Won: 82</text>
-		  
-		  <rect x="180" y="40" width="160" height="150" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="190" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#6b7280" letter-spacing="1">ACTIVE CAMPAIGNS</text>
-		  
-		  <rect x="190" y="65" width="140" height="40" rx="2" fill="#f1f5f9"/>
-		  <text x="195" y="78" font-family="IBM Plex Mono" font-size="7" font-weight="600" fill="#111827">Q3 B2B Outreach</text>
-		  <text x="195" y="93" font-family="IBM Plex Mono" font-size="7" font-weight="500" fill="#6b7280">ROI: +24%</text>
-		  <rect x="290" y="85" width="35" height="12" rx="2" fill="rgba(16,185,129,0.1)"/>
-		  <text x="295" y="93" font-family="IBM Plex Mono" font-size="5" font-weight="700" fill="#10b981">ACTIVE</text>
-		  
-		  <rect x="190" y="115" width="140" height="40" rx="2" fill="#f1f5f9"/>
-		  <text x="195" y="128" font-family="IBM Plex Mono" font-size="7" font-weight="600" fill="#111827">Social Ads - KSA</text>
-		  <text x="195" y="143" font-family="IBM Plex Mono" font-size="7" font-weight="500" fill="#6b7280">Cost: SAR 12K</text>
-		  
-		  <rect x="0" y="202" width="350" height="18" fill="rgba(184,134,11,0.05)"/>
-		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#b8860b" letter-spacing="1">CRM HUB · LEAD GENERATION · CAMPAIGN ROI</text>
-		</svg>
-	  </div>
-	  <div class="gcard-body">
-		<div class="gcard-module">Module · 06</div>
-		<div class="gcard-title">Marketing & CRM</div>
-		<div class="gcard-desc">Drive enterprise growth with integrated customer relationship management, sales pipelines, and active campaign tracking.</div>
-		<div class="gcard-feats">
-		  <div class="gcard-feat">Visual lead generation sales funnels</div>
-		  <div class="gcard-feat">Campaign performance & ROI metrics</div>
-		  <div class="gcard-feat">Client relationship hub & deal stages</div>
-		</div>
-		<div class="gcard-tags"><span class="gcard-tag">CRM</span><span class="gcard-tag">Sales</span><span class="gcard-tag">Growth</span></div>
-	  </div>
-	</div>
-
-	<div class="gcard fade-in">
-	  <div class="gcard-screen">
-		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
-		  <rect width="350" height="220" fill="#f8fafc"/>
-		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.25)" stroke-width="1"/>
-		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX IT · ASSET & TICKET BOARD</text>
-		  
-		  <rect x="10" y="40" width="195" height="145" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="20" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#6b7280" letter-spacing="1">OPEN TICKETS</text>
-		  
-		  <rect x="15" y="65" width="185" height="24" rx="2" fill="#f1f5f9"/>
-		  <rect x="20" y="71" width="35" height="12" rx="2" fill="rgba(239,68,68,0.1)"/>
-		  <text x="25" y="79" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#ef4444">HIGH</text>
-		  <text x="65" y="79" font-family="IBM Plex Mono" font-size="7" font-weight="500" fill="#374151">Server timeout on mod 4</text>
-		  
-		  <rect x="15" y="95" width="185" height="24" rx="2" fill="#f1f5f9"/>
-		  <rect x="20" y="101" width="35" height="12" rx="2" fill="rgba(245,158,11,0.1)"/>
-		  <text x="25" y="109" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#f59e0b">MED</text>
-		  <text x="65" y="109" font-family="IBM Plex Mono" font-size="7" font-weight="500" fill="#374151">Laptop SN-0042 fault</text>
-		  
-		  <rect x="15" y="125" width="185" height="24" rx="2" fill="#f1f5f9"/>
-		  <rect x="20" y="131" width="35" height="12" rx="2" fill="rgba(16,185,129,0.1)"/>
-		  <text x="25" y="139" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#10b981">DONE</text>
-		  <text x="65" y="139" font-family="IBM Plex Mono" font-size="7" font-weight="500" fill="#9ca3af">WiFi AP replaced</text>
-		  
-		  <rect x="215" y="40" width="125" height="145" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="225" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#6b7280" letter-spacing="1">ASSET REG</text>
-		  
-		  <text x="225" y="75" font-family="IBM Plex Mono" font-size="8" font-weight="600" fill="#374151">Laptops</text>
-		  <text x="310" y="75" font-family="IBM Plex Mono" font-size="9" font-weight="700" fill="#b8860b">24</text>
-		  <line x1="225" y1="82" x2="320" y2="82" stroke="#e5e7eb" stroke-width="1"/>
-		  
-		  <text x="225" y="98" font-family="IBM Plex Mono" font-size="8" font-weight="600" fill="#374151">Phones</text>
-		  <text x="310" y="98" font-family="IBM Plex Mono" font-size="9" font-weight="700" fill="#b8860b">31</text>
-		  <line x1="225" y1="105" x2="320" y2="105" stroke="#e5e7eb" stroke-width="1"/>
-		  
-		  <text x="225" y="121" font-family="IBM Plex Mono" font-size="8" font-weight="600" fill="#374151">Servers</text>
-		  <text x="310" y="121" font-family="IBM Plex Mono" font-size="9" font-weight="700" fill="#b8860b">3</text>
-		  
-		  <rect x="0" y="202" width="350" height="18" fill="rgba(184,134,11,0.05)"/>
-		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#b8860b" letter-spacing="1">TICKETING · ASSET TRACKING · IAM OVERSIGHT</text>
-		</svg>
-	  </div>
-	  <div class="gcard-body">
-		<div class="gcard-module">Module · 07</div>
-		<div class="gcard-title">IT & Infrastructure</div>
-		<div class="gcard-desc">Secure identity access management and internal infrastructure support. IT asset tracking and priority-based issue ticketing.</div>
-		<div class="gcard-feats">
-		  <div class="gcard-feat">Role-Based Access Control (RBAC)</div>
-		  <div class="gcard-feat">IT Service Desk & support ticketing</div>
-		  <div class="gcard-feat">Hardware registry & license tracking</div>
-		</div>
-		<div class="gcard-tags"><span class="gcard-tag">Tickets</span><span class="gcard-tag">Assets</span><span class="gcard-tag">Security</span></div>
-	  </div>
-	</div>
-
-	<div class="gcard fade-in">
-	  <div class="gcard-screen">
-		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
-		  <rect width="350" height="220" fill="#f8fafc"/>
-		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.25)" stroke-width="1"/>
-		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX COMMS · AI GENERATOR</text>
-		  
-		  <rect x="10" y="40" width="100" height="150" rx="3" fill="#f1f5f9" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="18" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#6b7280" letter-spacing="1">TEMPLATES</text>
-		  <rect x="15" y="65" width="90" height="16" rx="2" fill="#b8860b"/>
-		  <text x="22" y="75" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#ffffff">Corporate Update</text>
-		  <rect x="15" y="85" width="90" height="16" rx="2" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="22" y="95" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#374151">Policy Warning</text>
-		  <rect x="15" y="105" width="90" height="16" rx="2" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="22" y="115" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#374151">Eid Al-Fitr</text>
-		  
-		  <rect x="120" y="40" width="220" height="150" rx="3" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="130" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#6b7280" letter-spacing="1">GENERATED DRAFT</text>
-		  <rect x="130" y="65" width="200" height="4" rx="2" fill="#cbd5e1"/>
-		  <rect x="130" y="75" width="180" height="4" rx="2" fill="#cbd5e1"/>
-		  <rect x="130" y="90" width="160" height="4" rx="2" fill="#e2e8f0"/>
-		  <rect x="130" y="100" width="170" height="4" rx="2" fill="#e2e8f0"/>
-		  <rect x="130" y="110" width="150" height="4" rx="2" fill="#e2e8f0"/>
-		  <rect x="130" y="130" width="90" height="4" rx="2" fill="#cbd5e1"/>
-		  <rect x="130" y="140" width="60" height="4" rx="2" fill="#cbd5e1"/>
-		  
-		  <rect x="250" y="170" width="80" height="14" rx="2" fill="rgba(184,134,11,0.1)"/>
-		  <text x="258" y="179" font-family="IBM Plex Mono" font-size="5.5" font-weight="700" fill="#b8860b">BROADCAST EMAIL</text>
-		  
-		  <rect x="0" y="202" width="350" height="18" fill="rgba(184,134,11,0.05)"/>
-		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#b8860b" letter-spacing="1">SMART DRAFTING · HOLIDAY PRESETS · GLOBAL SEND</text>
-		</svg>
-	  </div>
-	  <div class="gcard-body">
-		<div class="gcard-module">Module · 08</div>
-		<div class="gcard-title">AI Communications</div>
-		<div class="gcard-desc">Smart, formal email generation and broadcast tools for executives, replacing tedious drafting with intelligent presets.</div>
-		<div class="gcard-feats">
-		  <div class="gcard-feat">Context-aware AI email drafting</div>
-		  <div class="gcard-feat">Corporate warning & holiday templates</div>
-		  <div class="gcard-feat">Global internal announcement broadcasting</div>
-		</div>
-		<div class="gcard-tags"><span class="gcard-tag">AI Gen</span><span class="gcard-tag">Broadcasts</span><span class="gcard-tag">Email</span></div>
-	  </div>
-	</div>
-
-	<div class="gcard fade-in">
-	  <div class="gcard-screen">
-		<svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
-		  <rect width="350" height="220" fill="#f8fafc"/>
-		  <rect x="10" y="10" width="330" height="20" rx="3" fill="rgba(184,134,11,0.08)" stroke="rgba(184,134,11,0.25)" stroke-width="1"/>
-		  <text x="20" y="24" font-family="IBM Plex Mono" font-size="7.5" font-weight="600" fill="#b8860b" letter-spacing="1">OPERIX PLANNER · PROJECT BOARDS</text>
-		  
-		  <rect x="10" y="40" width="75" height="150" rx="3" fill="#f1f5f9" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="15" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#6b7280">BACKLOG</text>
-		  <rect x="15" y="65" width="65" height="25" rx="2" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="20" y="76" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#111827">Module test</text>
-		  <rect x="15" y="95" width="65" height="25" rx="2" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="20" y="106" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#111827">UI audit Q3</text>
-		  
-		  <rect x="95" y="40" width="75" height="150" rx="3" fill="#f1f5f9" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="100" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#f59e0b">IN PROG</text>
-		  <rect x="100" y="65" width="65" height="25" rx="2" fill="#ffffff" stroke="#f59e0b" stroke-width="1"/>
-		  <text x="105" y="76" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#111827">ANPR upgrade</text>
-		  <rect x="100" y="95" width="65" height="25" rx="2" fill="#ffffff" stroke="#f59e0b" stroke-width="1"/>
-		  <text x="105" y="106" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#111827">Report gen</text>
-		  
-		  <rect x="180" y="40" width="75" height="150" rx="3" fill="#f1f5f9" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="185" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#3b82f6">REVIEW</text>
-		  <rect x="185" y="65" width="65" height="25" rx="2" fill="#ffffff" stroke="#3b82f6" stroke-width="1"/>
-		  <text x="190" y="76" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#111827">Field GPS v3</text>
-		  
-		  <rect x="265" y="40" width="75" height="150" rx="3" fill="#f1f5f9" stroke="#e5e7eb" stroke-width="1"/>
-		  <text x="270" y="55" font-family="IBM Plex Mono" font-size="6" font-weight="700" fill="#10b981">DONE</text>
-		  <rect x="270" y="65" width="65" height="25" rx="2" fill="#ffffff" stroke="#10b981" stroke-width="1"/>
-		  <text x="275" y="76" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#111827">HRIS launch</text>
-		  
-		  <rect x="0" y="202" width="350" height="18" fill="rgba(184,134,11,0.05)"/>
-		  <text x="10" y="213" font-family="IBM Plex Mono" font-size="6" font-weight="600" fill="#b8860b" letter-spacing="1">KANBAN · MILESTONES · CROSS-TEAM BOARDS</text>
-		</svg>
-	  </div>
-	  <div class="gcard-body">
-		<div class="gcard-module">Module · 09</div>
-		<div class="gcard-title">Project Planner</div>
-		<div class="gcard-desc">Project and task management built for operations teams — Kanban boards, milestone tracking, and cross-module task assignment.</div>
-		<div class="gcard-feats">
-		  <div class="gcard-feat">Kanban: Backlog → In Progress → Review</div>
-		  <div class="gcard-feat">Milestone & deadline tracking alerts</div>
-		  <div class="gcard-feat">Cross-module team accountability</div>
-		</div>
-		<div class="gcard-tags"><span class="gcard-tag">Kanban</span><span class="gcard-tag">Milestones</span><span class="gcard-tag">Tasks</span></div>
+		<a href="https://operix-hris.vercel.app" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: auto; border-color: #10b981; color: #10b981;">Launch Platform</a>
 	  </div>
 	</div>
 
@@ -685,7 +390,7 @@ footer { text-align: center; padding: 40px 5%; font-family: var(--font-mono); fo
   <div class="fade-in">
 	<h2 style="font-family: var(--font-display); font-size: 40px; color: var(--navy-accent); margin-bottom: 20px;">Ready to Elevate Your Enterprise?</h2>
 	<p style="color: var(--text-muted); margin-bottom: 40px;">Request a live demonstration of the OPERIX suite tailored for your organization.</p>
-	<a href="mailto:sales@operix.com" class="btn btn-gold">Schedule a Demo</a>
+	<a href="mailto:operixsolution@gmail.com" class="btn btn-gold">Schedule a Demo</a>
   </div>
 </section>
 
